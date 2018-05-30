@@ -1,7 +1,7 @@
 <template>
   <div class="abbre">
-    <span ref="abbreFront" class="abbre-front" :style="frontWidth">{{front}}</span>
-    <span ref="abbreBehind" class="abbre-behind" :style="behindWidth">{{behind}}</span>
+    <span class="abbre-front" :style="frontWidth">{{front}}</span>
+    <span class="abbre-behind" :style="behindWidth">{{behind}}</span>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
             behindWidth: ''
         }
     },
-    mounted: function () {
+    created: function () {
         let text = this.text.toString()
         let len = text.length
         let left = (this.cut / len).toFixed(2) * 100
@@ -30,7 +30,6 @@ export default {
 
         this.frontWidth = 'max-width:' + left + '%'
         this.behindWidth = 'max-width:' + right + '%'
-        this.$refs.abbreBehind.dir = 'rtl'
     }
 }
 </script>
@@ -52,6 +51,7 @@ export default {
     text-overflow: clip;
     unicode-bidi: bidi-override;
     text-align: left;
+    direction: rtl;
   }
 
 </style>
