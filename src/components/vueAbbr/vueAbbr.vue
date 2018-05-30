@@ -1,0 +1,57 @@
+<template>
+  <div class="abbre">
+    <span ref="abbreFront" class="abbre-front" :style="frontWidth">{{front}}</span>
+    <span ref="abbreBehind" class="abbre-behind" :style="behindWidth">{{behind}}</span>
+  </div>
+</template>
+
+<script>
+export default {
+    name: 'vue-abbr',
+    props: {
+        text: String,
+        cut: Number
+    },
+    data: function () {
+        return {
+            front: '',
+            behind: '',
+            frontWidth: '',
+            behindWidth: ''
+        }
+    },
+    mounted: function () {
+        let text = this.text.toString()
+        let len = text.length
+        let left = (this.cut / len).toFixed(2) * 100
+        let right = 100 - left
+        this.front = text.substring(0, this.cut)
+        this.behind = text.substring(this.cut, len).split('').reverse().join('')
+
+        this.frontWidth = 'max-width:' + left + '%'
+        this.behindWidth = 'max-width:' + right + '%'
+        this.$refs.abbreBehind.dir = 'rtl'
+    }
+}
+</script>
+<style rel="stylesheet/less" lang="less">
+  .abbre {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .abbre-front {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .abbre-behind {
+    max-height: 24px;
+    overflow: hidden;
+    text-overflow: clip;
+    unicode-bidi: bidi-override;
+    text-align: left;
+  }
+
+</style>

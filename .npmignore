@@ -1,0 +1,15 @@
+build/
+config/
+src/
+assets/
+.idea/
+static/
+*.babelrc
+*.editorconfig
+*.eslintignore
+*.eslintrc.js
+*.postcssrc.js
+index.html
+App.vue
+main.js
+
