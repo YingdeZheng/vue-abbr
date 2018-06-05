@@ -1,6 +1,6 @@
 {
   "name": "vue-abbr",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A component for vue.js . Used for omitting the middle fragment in the single-line text. It is also adaptive when dragging the window screen.",
   "author": "dy",
   "license": "MIT",
@@ -12,8 +12,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "vue": "^2.5.2",
     "autoprefixer": "^7.1.2",
