@@ -1,6 +1,6 @@
 <template>
   <div class="abbre">
-    <span class="abbre-front" :style="frontWidth">{{front}}</span>
+    <span class="abbre-front" >{{front}}</span>
     <span class="abbre-behind" :style="behindWidth">{{behind}}</span>
   </div>
 </template>
@@ -16,7 +16,6 @@ export default {
         return {
             front: '',
             behind: '',
-            frontWidth: '',
             behindWidth: ''
         }
     },
@@ -28,7 +27,6 @@ export default {
         this.front = text.substring(0, this.cut)
         this.behind = text.substring(this.cut, len).split('').reverse().join('')
 
-        this.frontWidth = 'max-width:' + left + '%'
         this.behindWidth = 'max-width:' + right + '%'
     }
 }
