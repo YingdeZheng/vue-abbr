@@ -55,9 +55,10 @@ export default {
 
   .abbre-behind {
     max-height: 24px;
+    text-align: left;
+    overflow: hidden;
     text-overflow: clip;
     unicode-bidi: bidi-override;
-    text-align: left;
     direction: rtl;
     word-break: break-all;
   }
