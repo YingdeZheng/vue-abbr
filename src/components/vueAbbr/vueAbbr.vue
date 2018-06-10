@@ -22,21 +22,64 @@ export default {
             behindWidth: ''
         }
     },
-    created: function () {
-        let text = this.text.toString()
+    created () {
+        let text = this.text
         let len = text.length
+        var left = 0
+        var right = 0
 
         if (!this.cut) {
-            let mid = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
-            this.front = text.substring(0, mid)
-            this.behind = text.substring(mid, len).split('').reverse().join('')
-            this.behindWidth = 'max-width: 50%'
+            left = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
+            right = 50
         } else {
-            let left = (this.cut / len).toFixed(2) * 100
-            let right = 100 - left
-            this.front = text.substring(0, this.cut)
-            this.behind = text.substring(this.cut, len).split('').reverse().join('')
-            this.behindWidth = 'max-width:' + right + '%'
+            left = (this.cut / len).toFixed(2) * 100
+            right = 100 - left
+        }
+        this.front = text.substring(0, left)
+        let behind = text.substring(left, len).split('').reverse()
+        this.behind = this.replaceS(behind)
+        this.behindWidth = 'max-width:' + right + '%'
+    },
+    methods: {
+        replaceS (str) {
+            let reg = '<>《》（）(){}[]【】'
+            for (let ind in str) {
+                let val = str[ind]
+                let mind = reg.indexOf(val)
+                if (mind !== -1) {
+                    switch (mind) {
+                    case 0 : str[ind] = '>'
+                        break
+                    case 1 : str[ind] = '<'
+                        break
+                    case 2 : str[ind] = '》'
+                        break
+                    case 3 : str[ind] = '《'
+                        break
+                    case 4 : str[ind] = '）'
+                        break
+                    case 5 : str[ind] = '（'
+                        break
+                    case 6 : str[ind] = ')'
+                        break
+                    case 7 : str[ind] = '('
+                        break
+                    case 8 : str[ind] = '}'
+                        break
+                    case 9 : str[ind] = '{'
+                        break
+                    case 10 : str[ind] = ']'
+                        break
+                    case 11 : str[ind] = '['
+                        break
+                    case 12 : str[ind] = '】'
+                        break
+                    case 13 : str[ind] = '【'
+                        break
+                    }
+                }
+            }
+            return str.join('')
         }
     }
 }
