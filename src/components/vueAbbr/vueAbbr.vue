@@ -1,7 +1,7 @@
 <template>
   <div class="abbre">
-    <span class="abbre-front" >{{front}}</span>
-    <span class="abbre-behind" :style="behindWidth">{{behind}}</span>
+    <span class="abbre-front">{{front}}</span>
+    <span class="abbre-behind">{{behind}}</span>
   </div>
 </template>
 
@@ -18,27 +18,22 @@ export default {
     data: function () {
         return {
             front: '',
-            behind: '',
-            behindWidth: ''
+            behind: ''
         }
     },
     created () {
         let text = this.text
         let len = text.length
         var left = 0
-        var right = 0
 
         if (!this.cut) {
             left = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
-            right = 50
         } else {
             left = (this.cut / len).toFixed(2) * 100
-            right = 100 - left
         }
         this.front = text.substring(0, left)
         let behind = text.substring(left, len).split('').reverse()
         this.behind = this.replaceS(behind)
-        this.behindWidth = 'max-width:' + right + '%'
     },
     methods: {
         replaceS (str) {
