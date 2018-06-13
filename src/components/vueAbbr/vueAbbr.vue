@@ -23,7 +23,8 @@ export default {
             return this.text.substring(0, Math.floor(this.cut / 100 * this.text.length))
         },
         behind () {
-            return this.text.substring(Math.floor(this.cut / 100 * this.text.length), this.text.length)
+            let behind = this.text.substring(Math.floor(this.cut / 100 * this.text.length), this.text.length)
+            return this.replaceS(behind.split('').reverse())
         }
     },
     methods: {
