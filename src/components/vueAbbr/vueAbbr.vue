@@ -1,5 +1,5 @@
 <template>
-  <div class="abbre" :change="change(this.text)">
+  <div class="abbre">
     <span class="abbre-front">{{front}}</span>
     <span class="abbre-behind">{{behind}}</span>
   </div>
@@ -9,34 +9,24 @@
 export default {
     name: 'vue-abbr',
     props: {
-        text: String,
+        text: {
+            type: String,
+            required: true
+        },
         cut: {
             type: Number,
-            default: 0
+            default: 50
         }
     },
-    data: function () {
-        return {
-            front: '',
-            behind: ''
+    computed: {
+        front () {
+            return this.text.substring(0, Math.floor(this.cut / 100 * this.text.length))
+        },
+        behind () {
+            return this.text.substring(Math.floor(this.cut / 100 * this.text.length), this.text.length)
         }
     },
     methods: {
-        change (text) {
-            if (text) {
-                let len = text.length
-                var left = 0
-
-                if (!this.cut) {
-                    left = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
-                } else {
-                    left = (this.cut / len).toFixed(2) * 100
-                }
-                this.front = text.substring(0, left)
-                let behind = text.substring(left, len).split('').reverse()
-                this.behind = this.replaceS(behind)
-            }
-        },
         replaceS (str) {
             let reg = '<>《》（）(){}[]【】'
             for (let ind in str) {
