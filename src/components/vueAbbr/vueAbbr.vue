@@ -23,17 +23,19 @@ export default {
     },
     methods: {
         change (text) {
-            let len = text.length
-            var left = 0
+            if (text) {
+                let len = text.length
+                var left = 0
 
-            if (!this.cut) {
-                left = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
-            } else {
-                left = (this.cut / len).toFixed(2) * 100
+                if (!this.cut) {
+                    left = len % 2 === 0 ? Math.floor(len / 2) : (Math.floor(len / 2) + 1)
+                } else {
+                    left = (this.cut / len).toFixed(2) * 100
+                }
+                this.front = text.substring(0, left)
+                let behind = text.substring(left, len).split('').reverse()
+                this.behind = this.replaceS(behind)
             }
-            this.front = text.substring(0, left)
-            let behind = text.substring(left, len).split('').reverse()
-            this.behind = this.replaceS(behind)
         },
         replaceS (str) {
             let reg = '<>《》（）(){}[]【】'
