@@ -1,5 +1,5 @@
 <template>
-  <div class="abbre">
+  <div :title="text" class="abbre">
     <span class="abbre-front">{{front}}</span>
     <span class="abbre-behind">{{behind}}</span>
   </div>
