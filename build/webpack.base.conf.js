@@ -24,7 +24,7 @@ module.exports = {
   // entry: {
   //   app: './main.js'
   // },
-  entry: './src/components/vueAbbr/index.js',
+  entry: './src/vueAbbr/index.js',
   output: {
     // path: config.build.assetsRoot,
     path: path.resolve(__dirname, './dist'),
