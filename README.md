@@ -4,6 +4,8 @@
 [![NPM](https://nodei.co/npm/vue-abbr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-abbr)
 
 # Vue-Abbr
+<img src="https://saucelabs.com/browser-matrix/vuejs.svg" alt="Sauce Test Status">
+
 #### Description
 A component for vue.js . Used for omitting the middle fragment in the single-line text. It is also adaptive when dragging the window screen.
 
