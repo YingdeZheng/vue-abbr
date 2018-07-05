@@ -52,4 +52,8 @@ export default {
   .input {
     width: 600px;
   }
+
+  .abbre-behind {
+    max-height: 20px;
+  }
 </style>

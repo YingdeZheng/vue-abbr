@@ -80,13 +80,13 @@ export default {
   .abbre-front {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: pre;
   }
 
   .abbre-behind {
     max-height: 24px;
     text-align: left;
-    white-space: normal;
+    white-space: pre-wrap;
     word-break: break-all;
     overflow: hidden;
     text-overflow: clip;
