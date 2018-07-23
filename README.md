@@ -5,7 +5,7 @@
 
 # Vue-Abbr
 ![testcustomer](./image/testcustomer.svg)
-#### Description
+### Description
 A component for vue.js . Used for omitting the middle fragment in the single-line text. It is also adaptive when dragging the window screen.
 
 In the space where the display width is limited, it can show the head and tail of a string of characters. Through this way, it will be easier to infer the meaning of the string.
