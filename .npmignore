@@ -2,9 +2,8 @@ build/
 config/
 example/
 src/
-assets/
 .idea/
-static/
+image/
 *.babelrc
 *.editorconfig
 *.eslintignore
