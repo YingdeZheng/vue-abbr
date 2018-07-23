@@ -4,7 +4,8 @@
 [![NPM](https://nodei.co/npm/vue-abbr.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-abbr)
 
 # Vue-Abbr
-![testcustomer](https://github.com/YingdeZheng/vue-abbr/blob/master/image/testcustomer.svg)
+![git][git]     
+
 ### Description
 A component for vue.js . Used for omitting the middle fragment in the single-line text. It is also adaptive when dragging the window screen.
 
@@ -45,3 +46,5 @@ Vue.use(VueAbbr)
 ## Contributions
 
 Welcome to improve vue-virtual-scroll-list with any issue, pull request or code review.
+
+[git]:https://github.com/YingdeZheng/vue-abbr/blob/master/image/testcustomer.svg
