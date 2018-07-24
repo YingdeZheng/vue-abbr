@@ -75,6 +75,9 @@ export default {
   .abbre {
     display: flex;
     justify-content: flex-start;
+    span {
+      display: inline-block;
+    }
   }
 
   .abbre-front {

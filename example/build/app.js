@@ -13687,7 +13687,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, ".abbre{display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start}.abbre-front{overflow:hidden;text-overflow:ellipsis;white-space:pre}.abbre-behind{max-height:24px;text-align:left;white-space:pre-wrap;word-break:break-all;overflow:hidden;text-overflow:clip;direction:rtl;unicode-bidi:bidi-override}", ""]);
+exports.push([module.i, ".abbre{display:-ms-flexbox;display:flex;-ms-flex-pack:start;justify-content:flex-start}.abbre span{display:inline-block}.abbre-front{overflow:hidden;text-overflow:ellipsis;white-space:pre}.abbre-behind{max-height:24px;text-align:left;white-space:pre-wrap;word-break:break-all;overflow:hidden;text-overflow:clip;direction:rtl;unicode-bidi:bidi-override}", ""]);
 
 // exports
 
